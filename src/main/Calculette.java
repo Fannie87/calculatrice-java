@@ -5,20 +5,19 @@ import java.util.Scanner;
 
 public class Calculette {
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in); // System.in is a standard input stream
+//		Scanner sc = new Scanner(System.in); // System.in is a standard input stream
 		System.out.println("Entrer un chiffre: ");
 		long chiffre1 = 0;
-		boolean testChiffre1 = true;
-		while (testChiffre1) {
+		boolean testChiffre1 = false;
+		do {
 			try {
-				chiffre1 = sc.nextLong();
+				chiffre1 = new Scanner(System.in).nextLong();
 				testChiffre1 = false;
 			} catch (Exception e) {
 				System.out.println("La saisie est incorrecte. Veuillez recommencer");
-				chiffre1 = new Scanner(System.in).nextLong();
+                testChiffre1 = true;
 			}
-
-		}
+		} while(testChiffre1 == true);
 
 //		while(chiffre1!=long) {
 		System.out.println("Veuillez saisir un chiffre");
@@ -26,7 +25,7 @@ public class Calculette {
 		System.out.println("Rentrer l'opération (-+/*)");
 		String operation = new Scanner(System.in).nextLine();
 		System.out.println("Entrer un deuxième chiffre: ");
-		long chiffre2 = sc.nextLong();
+		long chiffre2 = new Scanner(System.in).nextLong();
 
 		double resultat = 0.0;
 
